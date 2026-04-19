@@ -1,0 +1,193 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: rgb(146, 36, 168);
+  color: white;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  height: auto;
+}
+
+header {
+  text-align: center;
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  margin: 0;
+  font-size: 25px;
+}
+
+button.btn {
+    padding: 10px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px #00000033;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 16px rgba(255, 0, 0, 0.8);
+}
+
+button.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px #00000033;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  background-color: white;
+}
+
+th {
+  background-color: #d01313;
+}
+
+.profile-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.profile-container img {
+  width: 200px;
+  border-radius: 10px;
+  height: auto;
+}
+
+.profile-text {
+  color: white;
+}
+
+.glow-text {
+    text-shadow: 0 0 9px rgb(255, 255, 255), 0 0 16px rgb(255, 255, 255);
+  }
+
+
+
+.ig-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ig-links::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.links-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.links-github::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+/* Linkidn*/
+.idn-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.idn-links::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/960px-LinkedIn_logo_initials.png?20140125013055");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* portofolio*/
+.porto-links {
+  display: flexbox;
+  width: 80%; /* Memastikan kontainer utama full width */
+  align-items: center;
+  gap: 6px;
+}
+
+.porto-links::before {
+  content: "";
+  background-color: #333;
+  color: white;
+  text-align: center;
+  background-image: url("");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-flexbox;
+  margin-right: 5px;
+}
+
+
+/* alert */
+.custom-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 250px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: rgb(213, 204, 238);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  
+  /* Animasi awal: sembunyi di kanan */
+  transform: translateX(120%);
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-family: 'Apple-Chancery';
+}
+
+/* Class untuk memunculkan alert */
+.custom-alert.show {
+  transform: translateX(0);
+}
+
+.custom-alert.success {
+  border-left: 6px solid #10b981;
+}
+
+.custom-alert.error {
+  border-left: 6px solid #f43f5e;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Massanger Web Zyy</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- CSS eksternal -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Animasi -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+</head>
+
+<body class="text-gray-800">
+  <!-- Background -->
+  <video autoplay muted loop id="bg-video">
+  <source src="https://images8.alphacoders.com/140/thumb-350-1402373.mp4" type="video/mp4">
+  </video>
+
+  <!-- Header -->
+  <header class="text-center my-0-10">
+    <h1 data-aos="fade-down" data-aos-delay="500" class="py-16 text-red-500 text-6xl font-bold bg-black glow-text bg-opacity-80">Hello World!</h1>
+    <!-- <hr class="my-2" /> -->
+    <h2 data-aos="fade-down" data-aos-delay="600"class="text-3xl mb-10 mt-5">Hello, my name is <br/> Zyy </h2>
+  </header>
+  
+  <!-- Form -->
+  <div data-aos="fade-in" class="max-w-xl mx-auto p-4 bg-white shadow-md rounded">
+  <h1 class="text-center text-3xl font-bold mb-4">Kirim-Kirim Pesan 👋</h1>
+    <form id="form">
+      <label>Nama :</label>
+      <input name="nama" type="text" placeholder="Nama Kamu" class="block w-full border p-2 mb-2" />
+
+      <label>Umur :</label>
+      <input name="umur" type="number" placeholder="Umur Kamu" min="0" max="80" class="block w-full border p-2 mb-2" />
+
+      <label>Pesan Singkat Rahasia :</label>
+      <input name="rahasia"type="password" class="block w-full border p-2 mb-2" />
+
+      <label>Jenis Kelamin :</label><br />
+     <input type="radio" value="Male" name="gender" /> Laki-laki
+      <input type="radio" value="Female" name="gender" /> Perempuan
+      <br /><br />
+
+      <label>Hubungan ❤:</label>
+      <select name ="hubungan" class="block w-full border p-2 mb-10">
+        <option disabled selected>Punya Hubungan apa nih?</option>
+        <option>keluarga</option>
+        <option>Teman Sekolah</option>
+        <option>Teman Kecil</option>
+        <option>Lainnya</option>
+      </select>
+
+      <!-- Text area pesan -->
+      <label class="mt-10 mb-10 font-bold">Pesan Buat Zyy📩:</label>
+      <textarea rows="6" placeholder="Kasih Pesan Ke Zyy 🚀" name="pesan" class="block w-full border p-2 mb-2"></textarea>
+    
+      
+      <!-- submit -->
+      <button type="submit" id="submit" class="btn bg-blue-600 w-full text-white mb-10 rounded mt-10">Submit</button>
+
+      <!-- Alert estetik -->
+
+    </form>
+  </div>
+
+  <!-- Profile Zyy -->
+
+   <section data-aos="fade-up" data-aos-duration="2000" class="bg-blue-600 mt-20 p-8 bg-opacity-80 mb-10">
+    <h1 class="text-center text-5xl font-bold font-size-5px text-white underline decoration-green-600 mb-10"><b>PROFILE PICTURE</b></h1>
+    
+    <div class="profile-container max-w-3xl mx-auto mt-8 p-4">
+      <img data-aos="zoom-in" data-aos-delay="500" class="" src="/images/Calon Elite Global.jpg" class="w-full max-w-sm mx-auto rounded-lg"
+      alt="Me"/>
+      <div class="profile-text">
+        <h2 class="text-2xl hover:underline font-mono">ZYY (Calon Elite Global)</h2>
+        <p class="font-mono">Fau(zyy) Antariksa adalah Calon elite Global Asal Tangerang yang berfokus di bidang Technology. ia memiliki ketertarikan di bidang technology dan economies.
+          dia ingin mempunya start-up technology economies untuk bisa membantu masyarakat miskin, di satu sisi dia ingin menjadi mafia untuk mengambil
+          uang pemerintah dan mendistribusikan ke masyarkat miskin, sungguh hal yang gilaa...
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <!-- Link -->
+    <div class="links w-full text-center bg-opacity-80 mt-20 mb-10 p-4 bg-cyan-600">
+      <h1 class="text-3xl font-bold mb-10">Follow Me in this Link:</h1>
+
+      <button data-aos="fade-up" data-aos-delay="200"
+        onclick="window.open('https://github.com/Ziaaaantrks', '_self')"
+        class="links-github btn bg-red-600 text-white px-6 py-3 rounded-lg font-bold">
+        My Github
+      </button>
+      <br/><br/>
+
+      <button data-aos="fade-up" data-aos-delay="200"
+        onclick="window.open('https://www.instagram.com/ziaanntr.ks?igsh=MXVib3Uya3F6bWVoaw==', '_self')"
+        class="ig-links btn bg-red-600 text-white px-6 py-3 rounded-lg font-bold">
+        My Instagram
+      </button>
+
+      <button data-aos="fade-up" data-aos-delay="200"
+        onclick="window.open('https://www.linkedin.com/in/fauzi-antariksa-890274290/', '_self')"
+        class="idn-links btn bg-red-600 text-white px-6 py-3 m-5 rounded-lg font-bold">
+        My LinkedIn
+      </button>
+      </br>
+
+      <button data-aos="fade-up" data-aos-delay="200"
+        onclick="window.open('https://ziaaaantrks.github.io/Web-Real-Portofolio/','_self')"
+        class="porto-links btn bg-red-600 text-white px-6 py-3 m-5 rounded-lg font-bold">
+        PORTOFOLIO
+      </button>
+
+    </div>
+ 
+
+  <!-- Footer -->
+  <footer class="text-center bg-opacity-80 mt-10 p-1 py-4 bg-orange-900">
+    <h3 class="text-gray-500 text-center"> &copy; Build-by-Zyy</h3>
+  </footer>
+   
+  <script src="script.js"></script>
+
+  <script>AOS.init()</script>
+</body>
+
+<div id="custom-alert" class="custom-alert">
+  <span id="alert-icon"></span>
+  <span id="alert-message"></span>
+</div>
+
+</html>
