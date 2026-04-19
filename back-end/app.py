@@ -1,11 +1,19 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import smtplib
 from email.message import EmailMessage
 import sqlite3
 from dotenv import load_dotenv
 import threading
+
+app = Flask(__name__, static_folder="../front-end")
+CORS(app)
+
+@app.route("/")
+
+def home():
+    return send_from_directory(app.static_folder, "index.html")
 
 load_dotenv()
 
@@ -37,22 +45,11 @@ def send_email_async(nama, umur, gender, hubungan, rahasia, pesan):
     except Exception as e:
         print(f"Debug Email {e}")
 
-
-
-app = Flask(__name__)
-#cors
-CORS(app, resources={
-    r"/*": {
-        "origins": ["http://127.0.0.1:5500"], 
-        "methods": ["POST", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"]
-    }
-})
-
-
-
 def save_to_db(nama, umur, gender, hubungan, rahasia, pesan):
-    conn = sqlite3.connect("data.db")
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DB_PATH = os.path.join(BASE_DIR, "data.db")
+
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -76,11 +73,8 @@ def save_to_db(nama, umur, gender, hubungan, rahasia, pesan):
     conn.close()
 
 
-@app.route("/submit", methods=["POST", "OPTIONS"])
-def submit():
-    if request.method == "OPTIONS":
-        return jsonify({"status" : "ok"}), 200
-    
+@app.route("/submit")
+def submit()
     try:
         data = request.get_json(force=True, silent=True) or {}
        
@@ -116,4 +110,4 @@ def submit():
         }), 500
 
 if __name__ == "__main__":
-     app.run(debug=True)
+     app.run()
